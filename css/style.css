@@ -1,0 +1,165 @@
+@charset "UTF-8";
+
+body{
+	font-family: 'Noto Sans JP', 'Muli', sans-serif;
+	font-size: 62.5%;
+	color: #333333;
+}
+a {
+	color: #333333;
+	text-decoration: none;
+}
+ul {
+	list-style: none;
+}
+/* ヘッダー */
+header {
+	width: 100%;
+	background: #85cfee;
+	padding: 20px;
+}
+header h1 {
+	font-size: 4em;
+	font-weight: bold;
+	color: #fff;
+		text-align: center;
+}
+/* メイン */
+main {
+	width: 70%;
+	margin: 0 auto;
+}
+main section {
+	margin: 40px 0 60px;
+}
+main section h2 {
+	font-size: 3em;
+	font-weight: bold;
+	color: #2599ca;
+	padding: 10px 0;
+	border-top: solid 3px #2599ca;
+	border-bottom: solid 3px #2599ca;
+}
+main section .description {
+	font-size: 1.6em;
+	line-height: 150%;
+	margin: 20px 0;
+}
+main section ul li {
+	margin-bottom: 20px;
+}
+main section h3 {
+	display: inline-block;
+	font-size: 1.8em;
+	color: #fff;
+	background-color: #0c506d;
+	padding: 5px;
+}
+main section h3 span {
+	font-size: 0.8em;
+}
+main section .source {
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-start;
+}
+main section .source h4 {
+	width: 50%;
+	display: flex;
+	border: solid 10px #85cfee;
+}
+main section .source h4 span:nth-child(1) {
+	color: #fff;
+	background-color: #e0de0a;
+	font-size: 4em;
+}
+main section .source h4 span:nth-child(2) {
+	background-color: #eaad38;
+	font-size: 3em;
+}
+main section .source h4 span:nth-child(3) {
+	color: #fff;
+	background-color: #a9de4c;
+	font-size: 2em;
+}
+main section .source aside {
+	width: 45%;
+}
+main section .source aside .sourceview {
+	font-size: 1.4em;
+	line-height: 150%;
+	background: #e0e0e0;
+	padding: 20px;
+	margin-bottom: 20px;
+	box-sizing: border-box;
+}
+main section .source aside .sourceview pre {
+	white-space: pre-line;
+}
+/* 各レイアウト */
+.justify_01 h4 {
+	justify-content: flex-start;
+}
+.justify_02 h4 {
+	justify-content: center;
+}
+.justify_03 h4 {
+	justify-content: flex-end;
+}
+.justify_04 h4 {
+	justify-content: space-between;
+}
+.justify_05 h4 {
+	justify-content: space-around;
+}
+.margin_01 h4 span:nth-child(1) {
+	margin-left: auto;
+}
+.margin_02 h4 span:nth-child(1) {
+	margin-right: auto;
+}
+.margin_03 h4 span:nth-child(1) {
+	margin-left: auto;
+	margin-right: auto;
+}
+.margin_03 h4 span:nth-child(3) {
+	margin-left: auto;
+	margin-right: auto;
+}
+.align_01 h4 {
+	align-items: flex-start;
+}
+.align_02 h4 {
+	align-items: center;
+}
+.align_03 h4 {
+	align-items: flex-end;
+}
+.align_04 h4 {
+	align-items: baseline;
+}
+.align_05 h4 {
+	align-items: stretch;
+}
+.align_06 h4 span:nth-child(1) {
+	align-self: flex-start;
+}
+.align_07 h4 span:nth-child(1) {
+	align-self: center;
+}
+.align_08 h4 span:nth-child(1) {
+	align-self: flex-end;
+}
+/* フッター */
+footer {
+	width: 100%;
+	background: #85cfee;
+	padding: 10px;
+	text-align: center;
+}
+footer p {
+	font-size: 1.6em;
+}
+footer p a {
+	text-decoration: underline;
+}

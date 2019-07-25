@@ -1,0 +1,419 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>flex box Layout</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link href="https://fonts.googleapis.com/css?family=Muli|Noto+Sans+JP&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <header>
+    <h1>flex box Layout</h1>
+  </header>
+
+  <main>
+    <section>
+      <h2>基本のコード</h2>
+      <p class="description">＜span＞でマークアップした3つのフレックスアイテムを用意し、フォントサイズと背景色を変えて表示しています。各フレックスアイテムの横幅は指定していません。
+      </p>
+      <ul>
+        <li>
+          <h3>初期状態</h3>
+          <div class="source">
+            <h4>
+              <span>★</span>
+              <span>もぎたてトマトの<br>美味しい食べ方</span>
+              <span>★</span>
+            </h4>
+            <aside>
+              <div class="sourceview">
+                <pre>
+                  &lt;h4&gt;
+                  &lt;span&gt;★&lt;/span&gt;
+                  &lt;span&gt;もぎたてトマトの&lt;br&gt;美味しい食べ方&lt;/span&gt;
+                  &lt;span&gt;★&lt;/span&gt;
+                  &lt;/h4&gt;
+                </pre>
+              </div>
+              <div class="sourceview">
+                <pre>
+                  h4 {
+                    <pre style="color: #ea3838">display: flex;</pre>border: solid 10px #85cfee;
+                  }
+                  h4 span:nth-child(1) {
+                    color: #fff;
+                    background-color: #e0de0a;
+                    font-size: 4em;
+                  }
+                  h4 span:nth-child(2) {
+                    background-color: #eaad38;
+                    font-size: 3em;
+                  }
+                  h4 span:nth-child(3) {
+                    color: #fff;
+                    background-color: #a9de4c;
+                    font-size: 2em;
+                  }
+                </pre>
+              </div>
+            </aside>
+          </div>
+        </li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>横方向の位置揃えを指定する</h2>
+      <p class="description">フレックスアイテムの横方向の位置揃えは、フレックスコンテナ＜ｈ4＞のjustify-contentで次のように指定することができます。</p>
+      <ul>
+        <li>
+          <h3>左揃え</h3>
+          <div class="source justify_01">
+            <h4>
+              <span>★</span>
+              <span>もぎたてトマトの<br>美味しい食べ方</span>
+              <span>★</span>
+            </h4>
+            <aside>
+              <div class="sourceview">
+                <pre>
+                  h4 {
+                    display: flex;<pre style="color: #ea3838; font-weight: bold">justify-content: flex-start;</pre>border: solid 10px #85cfee;
+                  }
+                </pre>
+              </div>
+            </aside>
+          </div>
+        </li>
+        <li>
+          <h3>中央揃え</h3>
+          <div class="source justify_02">
+            <h4>
+              <span>★</span>
+              <span>もぎたてトマトの<br>美味しい食べ方</span>
+              <span>★</span>
+            </h4>
+            <aside>
+              <div class="sourceview">
+                <pre>
+                  h4 {
+                    display: flex;<pre style="color: #ea3838; font-weight: bold">justify-content: center;</pre>border: solid 10px #85cfee;
+                  }
+                </pre>
+              </div>
+            </aside>
+          </div>
+        </li>
+        <li>
+          <h3>右揃え</h3>
+          <div class="source justify_03">
+            <h4>
+              <span>★</span>
+              <span>もぎたてトマトの<br>美味しい食べ方</span>
+              <span>★</span>
+            </h4>
+            <aside>
+              <div class="sourceview">
+                <pre>
+                  h4 {
+                    display: flex;<pre style="color: #ea3838; font-weight: bold">justify-content: flex-end;</pre>border: solid 10px #85cfee;
+                  }
+                </pre>
+              </div>
+            </aside>
+          </div>
+        </li>
+        <li>
+          <h3>均等割りでフレックスアイテムの間に余白を挿入</h3>
+          <div class="source justify_04">
+            <h4>
+              <span>★</span>
+              <span>もぎたてトマトの<br>美味しい食べ方</span>
+              <span>★</span>
+            </h4>
+            <aside>
+              <div class="sourceview">
+                <pre>
+                  h4 {
+                    display: flex;<pre style="color: #ea3838; font-weight: bold">justify-content: space-between;</pre>border: solid 10px #85cfee;
+                  }
+                </pre>
+              </div>
+            </aside>
+          </div>
+        </li>
+        <li>
+          <h3>均等割りでフレックスアイテムの間と両サイドに余白を挿入<br><span>※ただし両サイドの余白は半分のサイズになります。</span></h3>
+          <div class="source justify_05">
+            <h4>
+              <span>★</span>
+              <span>もぎたてトマトの<br>美味しい食べ方</span>
+              <span>★</span>
+            </h4>
+            <aside>
+              <div class="sourceview">
+                <pre>
+                  h4 {
+                    display: flex;<pre style="color: #ea3838; font-weight: bold">justify-content: space-around;</pre>border: solid 10px #85cfee;
+                  }
+                </pre>
+              </div>
+            </aside>
+          </div>
+        </li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>余白の配置を調整する</h2>
+      <p class="description">フレックスコンテナ内の余白は、marginプロパティの「auto」を利用してどこに配置するかをコントロールすることができます。</p>
+      <ul>
+        <li>
+          <h3>1つめの要素の左側に配置</h3>
+          <div class="source margin_01">
+            <h4>
+              <span>★</span>
+              <span>もぎたてトマトの<br>美味しい食べ方</span>
+              <span>★</span>
+            </h4>
+            <aside>
+              <div class="sourceview">
+                <pre>
+                  h4 {
+                    display: flex;
+                    border: solid 10px #85cfee;
+                  }
+                  h4 span:nth-child(1) {
+                  	<pre style="color: #ea3838; font-weight: bold">margin-left: auto;</pre>}
+                </pre>
+              </div>
+            </aside>
+          </div>
+        </li>
+        <li>
+          <h3>1つめの要素の右側に配置</h3>
+          <div class="source margin_02">
+            <h4>
+              <span>★</span>
+              <span>もぎたてトマトの<br>美味しい食べ方</span>
+              <span>★</span>
+            </h4>
+            <aside>
+              <div class="sourceview">
+                <pre>
+                  h4 {
+                    display: flex;
+                    border: solid 10px #85cfee;
+                  }
+                  h4 span:nth-child(1) {
+                  	<pre style="color: #ea3838; font-weight: bold">margin-right: auto;</pre>}
+                </pre>
+              </div>
+            </aside>
+          </div>
+        </li>
+        <li>
+          <h3>1つめと3つめの要素の左右に配置<br><span>※以下のように4つに分割されます。</span></h3>
+          <div class="source margin_03">
+            <h4>
+              <span>★</span>
+              <span>もぎたてトマトの<br>美味しい食べ方</span>
+              <span>★</span>
+            </h4>
+            <aside>
+              <div class="sourceview">
+                <pre>
+                  h4 {
+                    display: flex;
+                    border: solid 10px #85cfee;
+                  }
+                  h4 span:nth-child(1) {
+                    <pre style="color: #ea3838; font-weight: bold">margin-left: auto;</pre><pre style="color: #ea3838; font-weight: bold">margin-right: auto;</pre>}
+                    h4 span:nth-child(3) {
+                      <pre style="color: #ea3838; font-weight: bold">margin-left: auto;</pre><pre style="color: #ea3838; font-weight: bold">margin-right: auto;</pre>}
+                </pre>
+              </div>
+            </aside>
+          </div>
+        </li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>縦方向の位置揃えを指定する</h2>
+      <p class="description">フレックスアイテムの縦方向の位置揃えは、フレックスコンテナ＜ｈ4＞のalign-itemsで次のように指定することができます。</p>
+      <ul>
+        <li>
+          <h3>上揃え</h3>
+          <div class="source align_01">
+            <h4>
+              <span>★</span>
+              <span>もぎたてトマトの<br>美味しい食べ方</span>
+              <span>★</span>
+            </h4>
+            <aside>
+              <div class="sourceview">
+                <pre>
+                  h4 {
+                    display: flex;<pre style="color: #ea3838; font-weight: bold">align-items: flex-start;</pre>border: solid 10px #85cfee;
+                  }
+                </pre>
+              </div>
+            </aside>
+          </div>
+        </li>
+        <li>
+          <h3>中央揃え</h3>
+          <div class="source align_02">
+            <h4>
+              <span>★</span>
+              <span>もぎたてトマトの<br>美味しい食べ方</span>
+              <span>★</span>
+            </h4>
+            <aside>
+              <div class="sourceview">
+                <pre>
+                  h4 {
+                    display: flex;<pre style="color: #ea3838; font-weight: bold">align-items: center;</pre>border: solid 10px #85cfee;
+                  }
+                </pre>
+              </div>
+            </aside>
+          </div>
+        </li>
+        <li>
+          <h3>下揃え</h3>
+          <div class="source align_03">
+            <h4>
+              <span>★</span>
+              <span>もぎたてトマトの<br>美味しい食べ方</span>
+              <span>★</span>
+            </h4>
+            <aside>
+              <div class="sourceview">
+                <pre>
+                  h4 {
+                    display: flex;<pre style="color: #ea3838; font-weight: bold">align-items: flex-end;</pre>border: solid 10px #85cfee;
+                  }
+                </pre>
+              </div>
+            </aside>
+          </div>
+        </li>
+        <li>
+          <h3>ベースライン揃え</h3>
+          <div class="source align_04">
+            <h4>
+              <span>★</span>
+              <span>もぎたてトマトの<br>美味しい食べ方</span>
+              <span>★</span>
+            </h4>
+            <aside>
+              <div class="sourceview">
+                <pre>
+                  h4 {
+                    display: flex;<pre style="color: #ea3838; font-weight: bold">align-items: baseline;</pre>border: solid 10px #85cfee;
+                  }
+                </pre>
+              </div>
+            </aside>
+          </div>
+        </li>
+        <li>
+          <h3>ストレッチ</h3>
+          <div class="source align_05">
+            <h4>
+              <span>★</span>
+              <span>もぎたてトマトの<br>美味しい食べ方</span>
+              <span>★</span>
+            </h4>
+            <aside>
+              <div class="sourceview">
+                <pre>
+                  h4 {
+                    display: flex;<pre style="color: #ea3838; font-weight: bold">align-items: stretch;</pre>border: solid 10px #85cfee;
+                  }
+                </pre>
+              </div>
+            </aside>
+          </div>
+        </li>
+        <li>
+          <h3>1つめの要素のみ上揃え</h3>
+          <div class="source align_06">
+            <h4>
+              <span>★</span>
+              <span>もぎたてトマトの<br>美味しい食べ方</span>
+              <span>★</span>
+            </h4>
+            <aside>
+              <div class="sourceview">
+                <pre>
+                  h4 {
+                    display: flex;
+                    border: solid 10px #85cfee;
+                  }
+                  h4 span:nth-child(1) {
+                  	<pre style="color: #ea3838; font-weight: bold">align-self: flex-start;</pre>}
+                </pre>
+              </div>
+            </aside>
+          </div>
+        </li>
+        <li>
+          <h3>1つめの要素のみ中央揃え</h3>
+          <div class="source align_07">
+            <h4>
+              <span>★</span>
+              <span>もぎたてトマトの<br>美味しい食べ方</span>
+              <span>★</span>
+            </h4>
+            <aside>
+              <div class="sourceview">
+                <pre>
+                  h4 {
+                    display: flex;
+                    border: solid 10px #85cfee;
+                  }
+                  h4 span:nth-child(1) {
+                    <pre style="color: #ea3838; font-weight: bold">align-self: center;</pre>}
+                </pre>
+              </div>
+            </aside>
+          </div>
+        </li>
+        <li>
+          <h3>1つめの要素のみ下揃え</h3>
+          <div class="source align_08">
+            <h4>
+              <span>★</span>
+              <span>もぎたてトマトの<br>美味しい食べ方</span>
+              <span>★</span>
+            </h4>
+            <aside>
+              <div class="sourceview">
+                <pre>
+                  h4 {
+                    display: flex;
+                    border: solid 10px #85cfee;
+                  }
+                  h4 span:nth-child(1) {
+                    <pre style="color: #ea3838; font-weight: bold">align-self: flex-end;</pre>}
+                </pre>
+              </div>
+            </aside>
+          </div>
+        </li>
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    <p>参考書籍：<a href="https://ebisu.com/html5css3-stepupbook/" target="_blank">HTML5&CSS3ステップアップブック</a></p>
+  </footer>
+
+</body>
+</html>

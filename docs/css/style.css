@@ -163,3 +163,24 @@ footer p {
 footer p a {
 	text-decoration: underline;
 }
+/* ########### 640px以下 ########### */
+@media screen and (max-width: 640px) {
+	/* メイン */
+	main {
+		width: 90%;
+		margin: 0 auto;
+	}
+	main section .source {
+		display: block;
+	}
+	main section .source h4 {
+		width: 100%;
+	}
+	main section .source aside {
+		width: 100%;
+	}
+	/* フッター */
+	footer p {
+		font-size: 1.4em;
+	}
+}

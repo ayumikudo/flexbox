@@ -175,6 +175,7 @@ footer p a {
 	}
 	main section .source h4 {
 		width: 100%;
+		box-sizing: border-box;
 	}
 	main section .source aside {
 		width: 100%;
